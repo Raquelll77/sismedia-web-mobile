@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import {Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Header() {
@@ -10,16 +10,19 @@ export default function Header() {
 
   return (
     <div className="mx-auto">
-      <div className={`flex items-center px-5 pt-2 sm:px-10 md:px-15`}>
+      <div className={`flex items-center px-5 pt-2 sm:px-10 md:px-15 shadow-lg`}>
         
         {/* Logo */}
         {!isMenuOpen && (
-          <img
-            className="w-32 sm:w-40 md:w-48"
-            src="LogoSismediaHorizontal.png"
-            alt="logoSismedia"
-          />
+          <Link to="/">
+            <img
+              className="w-32 sm:w-40 md:w-48"
+              src="LogoSismediaHorizontal.png"
+              alt="logoSismedia"
+            />
+          </Link>
         )}
+
         
         {/* Menú de navegación */}
         <nav

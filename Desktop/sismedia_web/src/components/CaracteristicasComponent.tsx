@@ -1,4 +1,3 @@
-
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { useEffect } from 'react';
@@ -12,48 +11,62 @@ export default function CaracteristicasComponent() {
   }, []);
 
   return (
-    <div className="md:mx-20 mt-10">
-      <div className="mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5 md:mt-4">
-          <div className="flex flex-col items-center justify-center m:p-15 text-center" data-aos="fade-up">
-              <img className="w-25 h-25 md:w-40 md:h-40" src="historial-medico-icono-azul.png" alt="historial-medico" />
-              <h3 className="mt-2 text-lg md:text-2xl text-center">Gestion eficiente de expediente médico </h3>
-          </div>
-          <div className="flex flex-col items-center justify-center m:p-15 text-center" data-aos="fade-up">
-              <img className="w-25 h-25 md:w-40 md:h-40" src="cerebro-humano-icono.png" alt="cerebro-humano" /> 
-              <h3 className="mt-2 text-lg md:text-2xl text-center">Diagnosticos realizados por IA</h3>
-          </div>
-          <div className="flex flex-col items-center justify-center m:p-15 text-center" data-aos="fade-up">
-                <img className="w-25 h-25 md:w-40 md:h-40" src="acceso-remoto-icono.png" alt="acceso-remoto" />
-                <h3 className="mt-2 text-lg md:text-2xl text-center">Acceso remoto a los datos</h3>
-          </div>
-          <div className="flex flex-col items-center justify-center m:p-15 text-center" data-aos="fade-up">
-              <img className="w-25 h-25 md:w-40 md:h-40" src="seguro-icono.png" alt="seguro-icono" />
-              <h3 className="mt-2 text-lg md:text-2xl text-center">Seguridad y privacidad</h3>
-          </div>
-        </div>
+    <section className="relative bg-gradient-to-br from-white to-blue-50/10 py-16 px-4 md:px-20">
+      {/* Fondo decorativo opcional */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('/icono-medico-decorativo.svg')] bg-no-repeat bg-right-top opacity-5 hidden md:block pointer-events-none" />
 
-        <h1 className="text-2xl md:text-4xl text-center font-bold my-5">Características</h1>
+      <div className="relative z-10">
+        <h2 className="text-3xl md:text-5xl font-bold text-center text-blue-800 mb-16">Características</h2>
 
-        <div className="grid md:grid-cols-3 md:gap-7">
-          <div className="flex flex-col items-center justify-center m:p-15 text-center" data-aos="fade-right">
-            <img className="w-25 h-25 md:w-40 md:h-40" src="expediente-medico-icono.png" alt="expediente-medico" />
-            <h2 className="mt-2 text-lg md:text-2xl text-center font-bold">Expedientes Medicos Digitales</h2>
-            <p className="mt-2 text-md md:text-2xl text-center">Gestion de informacion clínica de manera segura</p>
-          </div>
-          <div className="flex flex-col items-center justify-center m:p-15 text-center" data-aos="fade-up">
-            <img className="w-25 h-25 md:w-40 md:h-40" src="cerebro-humano-icono.png" alt="cerebro-humano" />
-            <h2 className="mt-2 text-lg md:text-2xl text-center font-bold">Inteligencia Artificial</h2>
-            <p className="mt-2 text-md md:text-2xl text-center">Herramientas avanzadas y recomendaciones sobre posibles tratamientos</p>
-          </div>
-          <div className="flex flex-col items-center justify-center m:p-15 text-center" data-aos="fade-left">
-            <img className="w-25 h-25 md:w-40 md:h-40" src="experiencia-de-usuario-icono.png" alt="experiencia-usuario" />
-            <h2 className="mt-2 text-lg md:text-2xl text-center font-bold">Interfaz Amigable</h2>
-            <p className="mt-2 text-md md:text-2xl text-center">Navegación intuitiva y fácil de entender, diseñada para cualquier usuario, sin importar su nivel de experiencia</p>
-        </div>
-
+        <div className="grid md:grid-cols-2 gap-12">
+          {[
+            {
+              img: 'historial-medico-icono-azul.png',
+              titulo: 'Gestión eficiente de expediente médico',
+              texto: 'Accede y organiza historiales clínicos con rapidez, sin complicaciones.',
+              anim: 'fade-right',
+            },
+            {
+              img: 'cerebro-humano-icono.png',
+              titulo: 'Diagnósticos impulsados por IA',
+              texto: 'Recibe sugerencias automáticas basadas en inteligencia artificial médica.',
+              anim: 'fade-left',
+            },
+            {
+              img: 'acceso-remoto-icono.png',
+              titulo: 'Acceso remoto y en tiempo real',
+              texto: 'Consulta expedientes y resultados desde cualquier lugar con conexión segura.',
+              anim: 'fade-right',
+            },
+            {
+              img: 'seguro-icono.png',
+              titulo: 'Privacidad y seguridad avanzada',
+              texto: 'Protege los datos clínicos con encriptación y controles de acceso.',
+              anim: 'fade-left',
+            },
+            {
+              img: 'expediente-medico-icono.png',
+              titulo: 'Expedientes digitales centralizados',
+              texto: 'Centraliza toda la información médica en un solo sistema integrado.',
+              anim: 'fade-up',
+            },
+            {
+              img: 'experiencia-de-usuario-icono.png',
+              titulo: 'Interfaz fácil de usar',
+              texto: 'Diseñada para todos los niveles: intuitiva, clara y adaptable.',
+              anim: 'fade-up',
+            },
+          ].map((item, i) => (
+            <div key={i} data-aos={item.anim} className="flex gap-5 items-start">
+              <img src={item.img} alt={item.titulo} className="w-16 h-16 md:w-20 md:h-20" />
+              <div>
+                <h3 className="text-lg md:text-2xl font-semibold text-blue-900 mb-2">{item.titulo}</h3>
+                <p className="text-sm md:text-base text-gray-600">{item.texto}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
