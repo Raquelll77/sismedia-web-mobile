@@ -76,8 +76,8 @@ export default function PlanesSuscripcionComponent() {
   };
 
   return (
-    <div className="mx-auto px-4">
-      <h1 className="text-2xl md:text-4xl text-center font-bold mb-5 mt-10 md:mt-20">
+    <div className="mx-auto px-4 md:my-50">
+      <h1 className="text-3xl md:text-5xl font-bold text-blue-800 mb-10 text-center">
         Planes de Suscripción
       </h1>
 
@@ -102,27 +102,27 @@ export default function PlanesSuscripcionComponent() {
           className="flex overflow-x-auto scroll-smooth gap-6 pb-4 md:overflow-x-visible md:justify-center"
         >
           {/* Card: Plan Básico */}
-          <div className="flex-shrink-0 w-[280px] md:w-1/3 max-w-md text-center border-2 border-gray-300 rounded-lg p-5 shadow-lg bg-white">
+          <div className="flex-shrink-0 w-[280px] md:w-1/3 max-w-md text-center border-2 border-gray-300 rounded-lg p-5 shadow-lg bg-white md:hover:scale-105 ease-in-out duration-300">
             <h2 className="text-xl md:text-3xl font-semibold mb-2">Plan Básico</h2>
             <p className="text-xl mb-3"><span className="text-5xl font-bold">$29</span>/mes</p>
             <p className="text-base md:text-lg mb-5">Funciones esenciales para pequeñas prácticas</p>
-            <button className="bg-blue-800 text-white text-lg px-5 py-2 rounded-lg hover:bg-cyan-600 transition" onClick={() => handlePlanSelection('Básico')}>Comenzar</button>
+            <button className="bg-blue-800 text-white text-lg px-5 py-2 rounded-lg hover:bg-cyan-600 transition md:hover:cursor-pointer" onClick={() => handlePlanSelection('Básico')}>Comenzar</button>
           </div>
 
           {/* Card: Plan Profesional */}
-          <div className="flex-shrink-0 w-[280px] md:w-1/3 max-w-md text-center border-2 border-gray-300 rounded-lg p-5 shadow-lg bg-white">
+          <div className="flex-shrink-0 w-[280px] md:w-1/3 max-w-md text-center border-2 border-gray-300 rounded-lg p-5 shadow-lg bg-white md:hover:scale-105 ease-in-out duration-300">
             <h2 className="text-xl md:text-3xl font-semibold mb-2">Plan Profesional</h2>
             <p className="text-xl mb-3"><span className="text-5xl font-bold">$59</span>/mes</p>
             <p className="text-base md:text-lg mb-5">Herramientas avanzadas y análisis de IA</p>
-            <button className="bg-blue-800 text-white text-lg px-5 py-2 rounded-lg hover:bg-cyan-600 transition" onClick={() => handlePlanSelection('Profesional')}>Comenzar</button>
+            <button className="bg-blue-800 text-white text-lg px-5 py-2 rounded-lg hover:bg-cyan-600 transition md:hover:cursor-pointer" onClick={() => handlePlanSelection('Profesional')}>Comenzar</button>
           </div>
 
           {/* Card: Plan Empresarial */}
-          <div className="flex-shrink-0 w-[280px] md:w-1/3 max-w-md text-center border-2 border-gray-300 rounded-lg p-5 shadow-lg bg-white">
+          <div className="flex-shrink-0 w-[280px] md:w-1/3 max-w-md text-center border-2 border-gray-300 rounded-lg p-5 shadow-lg bg-white md:hover:scale-105 ease-in-out duration-300">
             <h2 className="text-xl md:text-3xl font-semibold mb-2">Plan Empresarial</h2>
             <p className="text-xl mb-3"><span className="text-5xl font-bold">$99</span>/mes</p>
             <p className="text-base md:text-lg mb-5">Para grandes instituciones, características premium</p>
-            <button className="bg-blue-800 text-white text-lg px-5 py-2 rounded-lg hover:bg-cyan-600 transition" onClick={() => handlePlanSelection('Empresarial')}>Comenzar</button>
+            <button className="bg-blue-800 text-white text-lg px-5 py-2 rounded-lg hover:bg-cyan-600 transition md:hover:cursor-pointer" onClick={() => handlePlanSelection('Empresarial')}>Comenzar</button>
           </div>
         </div>
       </div>

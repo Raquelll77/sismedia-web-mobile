@@ -33,7 +33,7 @@ export default function TestimonioComponent() {
 
   return (
     <div className="mx-auto mb-10 w-full"> {/* Ajuste para móvil */}
-      <h1 className="text-4xl md:text-5xl font-bold text-center mb-10">Testimonios</h1> {/* Ajuste para móvil */}
+      <h1 className="text-3xl md:text-5xl font-bold text-blue-800 mb-10 text-center">Testimonios</h1> {/* Ajuste para móvil */}
       <div className="flex flex-col md:flex-row items-center justify-center"> {/* Ajuste para móvil */}
         <button
           onClick={prevTestimonio}

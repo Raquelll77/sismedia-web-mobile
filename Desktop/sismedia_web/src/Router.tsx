@@ -3,6 +3,9 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Layout from './layouts/Layout'
 import Contacto from './views/Contacto'
 import MencionesCondiciones from './components/MecionesCondiciones'
+import Nosotros from './views/Nosotros'
+import BlogPostPage from './views/BlogPostPage'
+import BlogComponent from './components/BlogComponent'
 const IndexPage = lazy(() =>import('./views/IndexPage'))
 const Caracteristicas = lazy(() =>import('./views/Caracteristicas'))
 const PlanesSuscripcion = lazy(() =>import('./views/PlanesSuscripcion'))
@@ -39,7 +42,17 @@ export default function AppRouter() {
                     <MencionesCondiciones/> 
                   </Suspense>
                 }/>
-                
+                <Route path='/nosotros' element={
+                  <Suspense fallback= "Cargando...">
+                    <Nosotros/> 
+                  </Suspense>
+                }/>
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
+                <Route path='/blog' element={
+                  <Suspense fallback= "Cargando...">
+                    <BlogComponent/> 
+                  </Suspense>
+                }/>
                 
               </Route>
             

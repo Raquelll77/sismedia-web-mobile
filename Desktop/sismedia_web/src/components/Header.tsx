@@ -75,6 +75,16 @@ export default function Header() {
             Planes de Suscripción
           </NavLink>
           <NavLink
+            to="/nosotros"
+            className={({ isActive }) =>
+              isActive
+                ? 'text-blue-700 uppercase font-bold block mb-2 sm:mb-0'
+                : 'text-black uppercase font-bold block mb-2 sm:mb-0'
+            }
+          >
+            Nosotros
+          </NavLink>
+          <NavLink
             to="/contactanos"
             className={({ isActive }) =>
               isActive
@@ -83,6 +93,16 @@ export default function Header() {
             }
           >
             Contáctanos
+          </NavLink>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) =>
+              isActive
+                ? 'text-blue-700 uppercase font-bold block mb-2 sm:mb-0'
+                : 'text-black uppercase font-bold block mb-2 sm:mb-0'
+            }
+          >
+            Blog
           </NavLink>
         </nav>
       </div>

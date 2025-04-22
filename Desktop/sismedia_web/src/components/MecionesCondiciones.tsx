@@ -1,7 +1,7 @@
 export default function MencionesCondiciones() {
   return (
     <div className="max-w-5xl mx-auto px-5 py-10 text-gray-800">
-      <h1 className="text-3xl font-bold mb-6 text-center">Menciones Legales y Condiciones de Uso</h1>
+      <h1 className="text-3xl md:text-5xl font-bold text-blue-800 mb-10 text-center">Menciones Legales y Condiciones de Uso</h1>
 
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-2">1. Identificación del Titular del Sitio Web</h2>

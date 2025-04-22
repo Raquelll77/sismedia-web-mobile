@@ -1,3 +1,5 @@
+
+import BlogComponent from "../components/BlogComponent";
 import ContactoComponent from "../components/ContactoComponent";
 import PlanesSuscripcionComponent from "../components/PlanesSuscripcionComponent";
 import TestimonioComponent from "../components/TestimonioComponent";
@@ -7,7 +9,7 @@ import Caracteristicas from "./Caracteristicas";
 export default function IndexPage() {
     return (
         <>
-            <div className="md:grid md:grid-cols-12 md:gap-8 flex flex-col-reverse items-center px-4 md:px-16 py-10 md:py-20 bg-white">
+            <div className="md:grid md:grid-cols-12 md:gap-8 flex flex-col-reverse items-center px-4 md:px-16 py-10 md:py-20 bg-white md:mb-20">
             {/* Columna de texto */}
             <div className="col-span-7 flex flex-col justify-center text-center md:text-left">
                 <h1 className="text-lg md:text-5xl font-black text-blue-800 leading-snug tracking-tight mb-4">
@@ -34,6 +36,8 @@ export default function IndexPage() {
 
             <Caracteristicas />
             <PlanesSuscripcionComponent/>
+            <BlogComponent/>
+            
             <div className="mx-auto grid md:grid-cols-2 mt-20">
                 <TestimonioComponent/>
                 <ContactoComponent />
