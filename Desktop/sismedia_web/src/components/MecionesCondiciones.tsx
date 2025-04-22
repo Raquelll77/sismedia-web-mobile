@@ -8,7 +8,7 @@ export default function MencionesCondiciones() {
         <p className="text-justify">
           Nombre de la Empresa: <strong>SISMEDIA</strong><br />
           Número de Registro: <strong>RTN-05031029202839</strong><br />
-          Correo Electrónico: gruposistemdia@sismedia.com <br />
+          Correo Electrónico: gruposismedia@sismedia.com <br />
           Teléfono: <strong>+504 2525-4040</strong>
         </p>
       </section>
