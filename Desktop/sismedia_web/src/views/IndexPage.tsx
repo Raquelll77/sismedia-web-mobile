@@ -18,7 +18,7 @@ export default function IndexPage() {
                 <h3 className="text-base md:text-2xl text-gray-700 mt-4 mb-6">
                 Optimiza la gestión de tus pacientes con nuestra solución innovadora impulsada por IA
                 </h3>
-                <button className="bg-blue-800 text-white px-4 py-2 md:px-6 md:py-4 text-base md:text-2xl font-bold rounded-lg hover:bg-cyan-600 transition duration-300 w-fit mx-auto md:mx-0">
+                <button className="bg-blue-800 text-white px-4 py-2 md:px-6 md:py-4 text-base md:text-2xl font-bold rounded-lg hover:bg-cyan-600 transition duration-300 w-fit mx-auto md:mx-0 md:hover:cursor-pointer">
                 Prueba Gratis
                 </button>
             </div>

@@ -37,7 +37,7 @@ export default function TestimonioComponent() {
       <div className="flex flex-col md:flex-row items-center justify-center"> {/* Ajuste para móvil */}
         <button
           onClick={prevTestimonio}
-          className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 transition mb-4 md:mb-0 md:mr-4" // Ajuste para móvil
+          className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 transition mb-4 md:mb-0 md:mr-4 md:hover:cursor-pointer" // Ajuste para móvil
         >
           {"<"}
         </button>
@@ -75,7 +75,7 @@ export default function TestimonioComponent() {
 
         <button
           onClick={nextTestimonio}
-          className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 transition mt-4 md:mt-0 md:ml-4" // Ajuste para móvil
+          className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 transition mt-4 md:mt-0 md:ml-4 md:hover:cursor-pointer" // Ajuste para móvil
         >
           {">"}
         </button>
