@@ -76,7 +76,7 @@ export default function PlanesSuscripcionComponent() {
   };
 
   return (
-    <div className="mx-auto px-4 md:my-50">
+    <div className="mx-auto px-4 my-10 md:my-50">
       <h1 className="text-3xl md:text-5xl font-bold text-blue-800 mb-10 text-center">
         Planes de Suscripción
       </h1>

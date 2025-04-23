@@ -58,7 +58,7 @@ export default function PlanesSuscripcion() {
   return (
     <div className="mx-auto px-4">
       <PlanesSuscripcionComponent/>
-      <h1 className="text-2xl md:text-4xl text-center font-bold mb-5 mt-10 md:mt-20">
+      <h1 className="text-2xl md:text-4xl text-center font-bold mb-5 mt-10 md:mt-20 ">
         Características Planes
       </h1>
 

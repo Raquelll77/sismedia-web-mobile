@@ -1,85 +1,97 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star } from "lucide-react";
+
+const testimonios = [
+  {
+    nombre: "Dr. Laura Mantes",
+    imagen: "testimonio-laura.jpg",
+    texto: "El diagnóstico de SISMEDIA ha sido muy útil. Altamente recomendado.",
+    rating: 5,
+  },
+  {
+    nombre: "Dr. Javier Rios",
+    imagen: "testimonio-javier.jpg",
+    texto:
+      "La integración con IA ha mejorado significativamente el diagnóstico y atención al paciente.",
+    rating: 4.5,
+  },
+  {
+    nombre: "Dr. Mariana Torres",
+    imagen: "testimonio-mariana.jpg",
+    texto:
+      "Excelente herramienta para gestionar pacientes, me ha facilitado mucho el trabajo diario.",
+    rating: 5,
+  },
+  {
+    nombre: "Dr. Pedro Sanchez",
+    imagen: "testimonio-pedro.png",
+    texto:
+      "Gracias a la implementación de historial medico en la nube puedo acceder a la informacion de mis pacientes de donde sea.",
+    rating: 4.5,
+  },
+];
 
 export default function TestimonioComponent() {
-  const testimonios = [
-    {
-      nombre: "Dr. Laura Mantes",
-      imagen: "testimonio-laura.jpg", // Reemplaza con la URL de la imagen
-      texto: "'El diagnóstico de SISMEDIA ha sido muy útil. Altamente recomendado.'",
-    },
-    {
-      nombre: "Dr. Javier Rios",
-      imagen: "testimonio-javier.jpg", // Reemplaza con la URL de la imagen
-      texto: "'La integración con IA ha mejorado significativamente el diagnóstico y atención al paciente.'",
-    },
-    {
-      nombre: "Dr. Mariana Torres",
-      imagen: "testimonio-mariana.jpg", // Reemplaza con la URL de la imagen
-      texto: "'Excelente herramienta para gestionar pacientes, me ha facilitado mucho el trabajo diario.'",
-    },
-  ];
+  const [current, setCurrent] = useState(0);
 
-  const [currentTestimonio, setCurrentTestimonio] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 2) % testimonios.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
-  const nextTestimonio = () => {
-    setCurrentTestimonio((prev) => (prev + 2) % testimonios.length);
+  const getStars = (rating: number) => {
+    return Array(5)
+      .fill(0)
+      .map((_, i) => (
+        <Star
+          key={i}
+          className={`w-4 h-4 ${i < rating ? "text-yellow-400" : "text-gray-300"}`}
+          fill={i < rating ? "currentColor" : "none"}
+        />
+      ));
   };
 
-  const prevTestimonio = () => {
-    setCurrentTestimonio(
-      (prev) => (prev - 2 + testimonios.length) % testimonios.length
-    );
-  };
+  const first = testimonios[current];
+  const second = testimonios[(current + 1) % testimonios.length];
 
   return (
-    <div className="mx-auto mb-10 w-full"> {/* Ajuste para móvil */}
-      <h1 className="text-3xl md:text-5xl font-bold text-blue-800 mb-10 text-center">Testimonios</h1> {/* Ajuste para móvil */}
-      <div className="flex flex-col md:flex-row items-center justify-center"> {/* Ajuste para móvil */}
-        <button
-          onClick={prevTestimonio}
-          className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 transition mb-4 md:mb-0 md:mr-4 md:hover:cursor-pointer" // Ajuste para móvil
+    <div className="mx-auto mb-10 w-full max-w-5xl px-4">
+      <h1 className="text-3xl md:text-5xl font-bold text-blue-800 mb-10 text-center">
+        Testimonios
+      </h1>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.5 }}
+          className="grid md:grid-cols-2 gap-6"
         >
-          {"<"}
-        </button>
-
-        <div className="flex flex-col md:flex-row gap-4 max-w-md"> {/* Ajuste para móvil */}
-          {/* Mostrar 2 testimonios a la vez */}
-          <div className="flex flex-col items-center text-center border-2 border-gray-300 rounded-lg p-6 shadow-lg">
-            <img
-              className="w-24 h-24 rounded-full mb-4"
-              src={testimonios[currentTestimonio].imagen}
-              alt={testimonios[currentTestimonio].nombre}
-            />
-            <h3 className="text-xl font-semibold mb-2">
-              {testimonios[currentTestimonio].nombre}
-            </h3>
-            <p className="text-lg italic">
-              {testimonios[currentTestimonio].texto}
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center text-center border-2 border-gray-300 rounded-lg p-6 shadow-lg">
-            <img
-              className="w-24 h-24 rounded-full mb-4"
-              src={testimonios[(currentTestimonio + 1) % testimonios.length].imagen}
-              alt={testimonios[(currentTestimonio + 1) % testimonios.length].nombre}
-            />
-            <h3 className="text-xl font-semibold mb-2">
-              {testimonios[(currentTestimonio + 1) % testimonios.length].nombre}
-            </h3>
-            <p className="text-lg italic">
-              {testimonios[(currentTestimonio + 1) % testimonios.length].texto}
-            </p>
-          </div>
-        </div>
-
-        <button
-          onClick={nextTestimonio}
-          className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 transition mt-4 md:mt-0 md:ml-4 md:hover:cursor-pointer" // Ajuste para móvil
-        >
-          {">"}
-        </button>
-      </div>
+          {[first, second].map((testimonio, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center text-center border-2 border-gray-300 rounded-lg p-6 shadow-xl bg-white"
+            >
+              <img
+                className="w-24 h-24 rounded-full mb-4 object-cover"
+                src={testimonio.imagen}
+                alt={testimonio.nombre}
+              />
+              <h3 className="text-xl font-semibold mb-2">
+                {testimonio.nombre}
+              </h3>
+              <div className="flex justify-center mb-3">{getStars(testimonio.rating)}</div>
+              <p className="text-lg italic text-gray-600">
+                "{testimonio.texto}"
+              </p>
+            </div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

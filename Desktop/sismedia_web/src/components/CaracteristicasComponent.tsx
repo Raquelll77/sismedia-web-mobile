@@ -48,13 +48,13 @@ export default function CaracteristicasComponent() {
               img: 'expediente-medico-icono.png',
               titulo: 'Expedientes digitales centralizados',
               texto: 'Centraliza toda la información médica en un solo sistema integrado.',
-              anim: 'fade-up',
+              anim: 'fade-right',
             },
             {
               img: 'experiencia-de-usuario-icono.png',
               titulo: 'Interfaz fácil de usar',
               texto: 'Diseñada para todos los niveles: intuitiva, clara y adaptable.',
-              anim: 'fade-up',
+              anim: 'fade-left',
             },
           ].map((item, i) => (
             <div key={i} data-aos={item.anim} className="flex gap-5 items-start">
